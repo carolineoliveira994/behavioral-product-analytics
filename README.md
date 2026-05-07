@@ -1,13 +1,17 @@
-## Visualizações
+# Behavioral Product Analytics
 
-### Funil de conversão
+## Users highly engaged do not necessarily convert
 
-![Funil de conversão](output/charts/funnel.png)
+![Personas](output/charts/personas.png)
 
-### Decisão de compra
+---
 
-![Decisão de compra](output/charts/decision.png)
+## Half of purchases happen quickly
 
-### Preço
+![Time to purchase](output/charts/time_to_purchase.png)
 
-![Análise de preço](output/charts/price.png)
+---
+
+## Products attract users but fail to convert
+
+![Low conversion products](output/charts/low_conversion_products.png)
