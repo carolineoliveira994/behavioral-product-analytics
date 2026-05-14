@@ -8,7 +8,12 @@ st.set_page_config(
     layout="wide"
 )
 
-df = pd.read_csv("../data/processed/events_sample_dashboard.csv")
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_PATH = BASE_DIR / "data" / "processed" / "events_sample_dashboard.csv"
+
+df = pd.read_csv(DATA_PATH)
 
 st.sidebar.header("Filtros")
 
@@ -46,7 +51,7 @@ def limpar_grafico(fig):
     return fig
 
 
-st.title("📊 Por que usuários engajados não compram?")
+st.title("📊 Por que olhamos, olhamos e não compramos?")
 st.subheader("Uma análise comportamental do funil de e-commerce")
 
 st.error(
@@ -60,7 +65,7 @@ st.error(
 
 st.divider()
 
-st.markdown("## Resumo Executivo")
+st.markdown("## Resumo")
 
 st.success(
     """
@@ -74,15 +79,12 @@ st.success(
 
 st.divider()
 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4, col5 = st.columns(5)
 col1.metric("Usuários", f"{users:,.0f}")
 col2.metric("Taxa de Conversão", f"{conversion_rate:.2f}%")
 col3.metric("Abandono", f"{dropoff_rate:.2f}%")
 col4.metric("Compras", f"{purchases:,.0f}")
-
-col5, col6 = st.columns(2)
-col5.metric("Visualização → Carrinho", f"{view_to_cart:.2f}%")
-col6.metric("Carrinho → Compra", f"{cart_to_purchase:.2f}%")
+col5.metric("Visualização → Carrinho",f"{view_to_cart:.2f}%")
 
 st.divider()
 
